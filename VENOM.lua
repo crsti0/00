@@ -1225,7 +1225,7 @@ send(msg.chat_id_, msg.id_,"*◉ارسل الكلمه التي تريد اضاف
 bot_data:set(ban_id.."Set:array"..msg.sender_user_id_..":"..msg.chat_id_,true)
 return false 
 end
-if text == ("مسح الردود العامه") and Devban(msg) then 
+if text == ("مسح ردود التلي") and Devban(msg) then 
 local list = bot_data:smembers(ban_id..'List:Rd:Sudo')
 for k,v in pairs(list) do
 bot_data:del(ban_id.."Add:Rd:Sudo:Gif"..v)   
@@ -4025,12 +4025,12 @@ dofile('VENOM.lua')
 end
 
 
-if text and text:match("^تغير الاشتراك$") and Devban(msg) then  
+if text and text:match("^تغير التنفيذ$") and Devban(msg) then  
 bot_data:setex(ban_id.."add:ch:jm" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 360, true)  
 send(msg.chat_id_, msg.id_, ' ◉  حسنآ ارسل لي معرف القناة')
 return false  
 end
-if text and text:match("^تغير رساله الاشتراك$") and Devban(msg) then  
+if text and text:match("^تغير رساله التنفيذ$") and Devban(msg) then  
 bot_data:setex(ban_id.."textch:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 360, true)  
 send(msg.chat_id_, msg.id_, ' ◉  حسنآ ارسل لي النص الذي تريده')
 return false  
